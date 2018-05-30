@@ -1390,6 +1390,15 @@ int ADDCALL hackrf_set_lna_gain(hackrf_device* device, uint32_t value)
 	}
 }
 
+uint32_t ADDCALL hackrf_get_lna_gain_steps(hackrf_device* device)
+{
+    /* Hard-coded for now, in the future could consult the hackrf_device* 
+     * reference if different hackrf platforms support different gain
+     * steps
+     */
+    return 8;
+}
+
 int ADDCALL hackrf_set_vga_gain(hackrf_device* device, uint32_t value)
 {
 	int result;
@@ -1420,6 +1429,15 @@ int ADDCALL hackrf_set_vga_gain(hackrf_device* device, uint32_t value)
 	}
 }
 
+uint32_t ADDCALL hackrf_get_vga_gain_steps(hackrf_device* device)
+{
+    /* Hard-coded for now, in the future could consult the hackrf_device* 
+     * reference if different hackrf platforms support different gain
+     * steps
+     */
+    return 2;
+}
+
 int ADDCALL hackrf_set_txvga_gain(hackrf_device* device, uint32_t value)
 {
 	int result;
@@ -1447,6 +1465,15 @@ int ADDCALL hackrf_set_txvga_gain(hackrf_device* device, uint32_t value)
 	} else {
 		return HACKRF_SUCCESS;
 	}
+}
+
+uint32_t ADDCALL hackrf_get_txvga_gain_steps(hackrf_device* device)
+{
+    /* Hard-coded for now, in the future could consult the hackrf_device* 
+     * reference if different hackrf platforms support different gain
+     * steps
+     */
+    return 1;
 }
 
 int ADDCALL hackrf_set_antenna_enable(hackrf_device* device, const uint8_t value)
